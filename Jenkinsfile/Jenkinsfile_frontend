@@ -22,7 +22,7 @@ pipeline {
                 git credentialsId: 'GITHUB', url: 'https://github.com/Chirag21-dev/3tierapplication-jenkins.git'
             }
         }
-        /*stage('Sonarqube Analysis') {
+        stage('Sonarqube Analysis') {
             steps {
                 dir('frontend') {
                     withSonarQubeEnv('sonar-server') {
@@ -40,7 +40,7 @@ pipeline {
                 }
             }
         }
-        stage('OWASP Dependency-Check Scan') {
+        /*stage('OWASP Dependency-Check Scan') {
             steps {
                 dir('Application-Code/frontend') {
                     dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check'
