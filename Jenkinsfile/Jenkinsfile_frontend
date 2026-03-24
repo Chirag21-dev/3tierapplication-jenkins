@@ -41,7 +41,7 @@ pipeline {
                     waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token' 
                 }
             }
-        }*/
+        }
         stage('OWASP Dependency-Check Scan') {
             steps {
                 dir('frontend') {
@@ -49,10 +49,10 @@ pipeline {
                     dependencyCheckPublisher pattern: '**/dependency-check-report.xml' 
                 }
             }
-        }
+        }*/
         stage('Trivy File Scan') {
             steps {
-                dir('Application-Code/frontend') {
+                dir('frontend') {
                     sh 'trivy fs . > trivyfs.txt'
                 }
             }
